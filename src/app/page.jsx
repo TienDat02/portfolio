@@ -9,7 +9,7 @@ const Home = () => {
         <div className="flex flex-col justify-between items-center text-center md:flex-row md:text-left">
         <div className="order-2 md:order-none">
           <h2>Xin chào!</h2>
-          <h1>I'm <span className="text-5xl text-accent md:text-7xl">Đạt</span>,</h1>
+          <h1>I&apos;m <span className="text-5xl text-accent md:text-7xl">Đạt</span>,</h1>
           <p className="max-lg:max-w-[450px] lg:max-w-[600px] md:text-lg my-4"> a recent IT graduate with a passion for developing modern, elegant solutions that drive efficiency and innovation. With a strong foundation in software development and system analysis, I am eager to apply my skills to create impactful and scalable technologies.</p>
           <GradientButton href="/resume">View Resume</GradientButton>
 
