@@ -15,7 +15,7 @@ const Stats = ({ stats }) => {
                 My Stats
               </h2>
               <p className="text-sm leading-6 text-center text-white lg:text-left">
-                We help you to unleash the power within your business
+                What I have achieved so far
               </p>
             </div>
             <div className="w-full lg:w-4/5">

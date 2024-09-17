@@ -254,7 +254,7 @@ const Resume = () => {
             <div className="p-6 w-full lg:w-1/3 lg:sticky lg:top-0 lg:h-screen">
                 <h1 className='mb-4 text-accent'>Why Consider Me?</h1>
                 <p className="mb-6 md:text-lg text-[#a1a1a1]">As a recent graduate, I am eager to learn and grow. I am committed to continuously improving my skills to contribute value to you company.</p>
-                <ul className="flex flex-wrap gap-1 lg:flex-col">
+                <ul className="flex flex-wrap gap-1 lg:flex-col md:text-base text-sm">
                     {['about', 'education', 'skills', 'experience'].map((tab) => (
                         <motion.li
                             key={tab}

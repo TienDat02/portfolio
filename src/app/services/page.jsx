@@ -7,26 +7,26 @@ import { ArrowRight } from 'lucide-react'
 const services = [
   {
     num: '01',
-    title: 'Web Development',
-    description: 'We offer a wide range of web development services to help you grow your business.',
+    title: 'Application Development',
+    description: 'I am capable of developing web and desktop applications for businesses and individuals.',
     href: '#',
   },
   {
     num: '02',
     title: 'UI/UX Design',
-    description: 'We offer',
+    description: 'I can design modern user interfaces and user experiences for web and mobile applications.',
     href: '#',
   },
   {
     num: '03',
     title: 'SEO',
-    description: 'services to help you grow your business.',
+    description: 'I can help you improve the search engine ranking of your website.',
     href: '#',
   },
   {
     num: '04',
     title: 'Business Analysis',
-    description: 'We offer a wide range of digital es to help you grow your business.',
+    description: 'I can help you analyze your business and provide solutions to improve it.',
     href: '#',
   },
 ]
