@@ -38,7 +38,6 @@ const projects = [
         work: ["Content Writer", "Backlink Building"],
         image: "/VinaHealth.png",
         techs: ["Wordpress", "Google Analytics"],
-        github:"https://github.com/TienDat02/IE303-HotelManagement",
     },
     {
         num:"04",
@@ -47,8 +46,7 @@ const projects = [
         description: "A food delivery application that allows users to order food from local restaurants.",
         work: ["UI/UX Designer"],
         image: "/SpeedFood.png",
-        techs: ["Figma"],
-        github:"",
+        techs: ["Figma"]
     },
     {
         num:"05",
@@ -58,7 +56,7 @@ const projects = [
         work: ["Frontend Developer", "UI/UX Design","3D Model Builder"],
         image: "/nhathoducba.png",
         techs: ["Figma", "React", "ArcGIS"],
-        github:"",
+        github:"https://github.com/Khang283/Ticket_Shop",
     }
 ];
 

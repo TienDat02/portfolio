@@ -26,7 +26,7 @@ import Link from 'next/link';
 
 const about = {
     title: "About Me",
-    description: "I am a full-stack developer with 2 years of experience in building web applications.",
+    description: "I am an aspiring full-stack developer with a good foundation in building web applications.",
     info: [
         {
             title: "Name",
@@ -40,7 +40,7 @@ const about = {
         },
         {
             title: "Phone",
-            value: "0123456789",
+            value: "0328950020",
             icon: <FaPhone />
         },
         {
@@ -62,8 +62,8 @@ const about = {
 }
 
 const skills = {
-    title: "My skills",
-    description: "I am a full",
+    title: "My Skills",
+    description: "I have acquired proficiency in various technologies throughout my studies and projects.",
     info: [
         {
             icon: <FaHtml5 />,
@@ -113,34 +113,25 @@ const skills = {
     ]
 }
 const experience = {
-    title: "My experience",
-    description: "I am a full",
+    title: "My Experience",
+    description: "While I'm at the beginning of my professional journey, I've gained valuable experience through internships and projects.",
     info: [
         {
-            company: "HDBank",
-            position: "Back-end Developer",
-            duration: "2024 - 2024"
+            company: "University of Information Technology",
+            position: "Student",
+            duration: "2020 - 2024"
         },
         {
             company: "HDBank",
-            position: "Back-end Developer",
-            duration: "2024 - 2024"
+            position: "Back-end Developer Intern",
+            duration: "August 2024 - Now"
         },
-        {
-            company: "HDBank",
-            position: "Back-end Developer",
-            duration: "2024 - 2024"
-        },
-        {
-            company: "HDBank",
-            position: "Back-end Developer",
-            duration: "2024 - 2024"
-        },   
+
     ]
 }
 const education = {
-    title: "My education",
-    description: "I graduated from University of Information Technology in November 2024.",
+    title: "My Education",
+    description: "I recently graduated from the University of Information Technology in November 2024.",
     info: [
         {
             school: "University of Information Technology",
@@ -181,7 +172,7 @@ const Resume = () => {
                 case 'education':
                     return (
                         <div>
-                            <h2 className="mb-4 md:text-4xl font-bold text-accent">{education.title}</h2>
+                            <h2 className="mb-4 text-accent">{education.title}</h2>
                             <p className="mb-4">{education.description}</p>
                             {education.info.map((item, index) => (
                                 <div key={index} className="flex flex-col mb-8">
@@ -189,7 +180,7 @@ const Resume = () => {
                                         <img 
                                             src="/Logo_UIT.png" 
                                             alt={`${item.school} logo`} 
-                                            className="object-contain mr-4 md:w-24 md:h-24 w-16 h-16"
+                                            className="object-contain mr-4 w-16 h-16 md:w-24 md:h-24"
                                         />
                                         <div>
                                             <h3 className="font-semibold">{item.school}</h3>
@@ -218,7 +209,7 @@ const Resume = () => {
                 case 'skills':
                     return (
                         <div>
-                            <h2 className="mb-4 text-4xl font-bold text-accent">{skills.title}</h2>
+                            <h2 className="mb-4 text-accent">{skills.title}</h2>
                             <p className="mb-4">{skills.description}</p>
                             <div className="grid grid-cols-3 gap-4 md:grid-cols-4">
                                 {skills.info.map((skill, index) => (
@@ -233,12 +224,12 @@ const Resume = () => {
                     case 'experience':
                         return (
                             <div>
-                                <h2 className="mb-4 text-4xl font-bold text-accent">{experience.title}</h2>
+                                <h2 className="mb-4 text-accent">{experience.title}</h2>
                                 <p className="mb-4">{experience.description}</p>
-                                <div className="grid grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     {experience.info.map((item, index) => (
                                         <div key={index} className="p-4 bg-[#282828] rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105">
-                                            <h3 className="text-xl font-semibold text-accent">{item.company}</h3>
+                                            <h3 className="md:text-2xl text-accent">{item.company}</h3>
                                             <p className="text-lg">{item.position}</p>
                                             <p className="text-gray-400">{item.duration}</p>
                                         </div>
@@ -261,9 +252,9 @@ const Resume = () => {
         <div className="flex flex-col mx-auto max-w-7xl lg:flex-row">
             {/* Tabs */}
             <div className="p-6 w-full lg:w-1/3 lg:sticky lg:top-0 lg:h-screen">
-                <h1 className='mb-4 text-accent'>Why hire me?</h1>
-                <p className="mb-6 text-lg">I am a full-stack developer with 2 years of experience in building web applications.</p>
-                <ul className="flex flex-wrap gap-2 lg:flex-col">
+                <h1 className='mb-4 text-accent'>Why Consider Me?</h1>
+                <p className="mb-6 md:text-lg text-[#a1a1a1]">As a recent graduate, I am eager to learn and grow. I am committed to continuously improving my skills to contribute value to you company.</p>
+                <ul className="flex flex-wrap gap-1 lg:flex-col">
                     {['about', 'education', 'skills', 'experience'].map((tab) => (
                         <motion.li
                             key={tab}

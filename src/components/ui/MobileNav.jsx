@@ -41,21 +41,25 @@ export default function MobileNavigation() {
     }
   }, [isOpen])
 
-return (
+  return (
     <div className="md:hidden">
         <Button 
             size="icon" 
-            className="fixed top-8 right-4 z-50 w-10 h-10 hover:text-accent bg-primary"
+            className="fixed right-4 top-8 z-50 w-10 h-10 hover:text-accent bg-primary"
             onClick={() => setIsOpen(!isOpen)}
         >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             <span className="sr-only">Toggle navigation menu</span>
         </Button>
 
         {isOpen && (
-            <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40">
-                <nav className="fixed right-0 top-0 bottom-0 w-[240px] bg-background shadow-lg p-6 overflow-y-auto">
-                    <div className="flex flex-col gap-8 mt-16">
+            <div className="fixed inset-0 z-40 backdrop-blur-sm bg-background/80">
+                <nav className="fixed right-0 top-0 bottom-0 w-[300px] bg-primary shadow-lg p-6 overflow-y-auto">
+                    <h1 className="mt-16 mb-8 text-4xl font-semibold">
+                        <span className="text-accent">-</span>
+                        Dat <span className="text-accent">.</span>
+                    </h1>
+                    <div className="flex flex-col gap-8">
                         {links.map((link) => (
                             <Link
                                 key={link.path}
@@ -73,5 +77,5 @@ return (
             </div>
         )}
     </div>
-)
+  )
 }
