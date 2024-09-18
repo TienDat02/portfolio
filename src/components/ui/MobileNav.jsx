@@ -55,7 +55,7 @@ export default function MobileNavigation() {
         {isOpen && (
             <div className="fixed inset-0 z-40 backdrop-blur-sm bg-background/80">
                 <nav className="fixed right-0 top-0 bottom-0 w-[300px] bg-primary shadow-lg p-6 overflow-y-auto">
-                    <h1 className="mt-16 mb-8 text-4xl font-semibold">
+                    <h1 className="mt-16 mb-8 text-4xl font-semibold text-white cursor-default">
                         <span className="text-accent">-</span>
                         Dat <span className="text-accent">.</span>
                     </h1>

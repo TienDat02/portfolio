@@ -38,7 +38,7 @@ const Stats = ({ stats }) => {
 const StatItem = ({ value, label }) => (
   <div className="block">
     <div className="mb-3 text-4xl font-bold text-center text-indigo-500 font-manrope lg:text-left">
-      <CountUp end={value} duration={2.5} suffix="+" />
+      <CountUp end={value} duration={3.5} suffix="+" />
     </div>
     <span className="block text-center text-white lg:text-left">
       {label}

@@ -51,7 +51,7 @@ export default function Services() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
-              className="group relative overflow-hidden rounded-lg bg-[#282828] shadow-lg shadow-[#545454] transition-all duration-300 hover:shadow-xl hover:shadow-[#545454]"
+              className="group relative overflow-hidden rounded-lg bg-card shadow-lg shadow-[#545454] transition-all duration-300 hover:shadow-xl hover:shadow-[#545454]"
             >
               <div className="absolute -top-16 -left-16 w-32 h-32 rounded-full transition-all duration-300 bg-accent group-hover:-scale-150" />
               <div className="relative p-6">

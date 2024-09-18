@@ -24,7 +24,7 @@ module.exports = {
       colors: {
         primary: "#010203",
         accent:  "#04D9FF",
-        hover: "#04D9FF"
+        card: "#282828"
       }
 
   	}

@@ -159,7 +159,7 @@ const Resume = () => {
                             {about.info.map((item, index) => (
                                 <motion.div
                                     key={index}
-                                    className="bg-[#282828] p-4 rounded-lg shadow-md"
+                                    className="bg-card p-4 rounded-lg shadow-md"
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -201,7 +201,7 @@ const Resume = () => {
                                             {item.softSkills.split(', ').map((skill, skillIndex) => (
                                                 <span 
                                                     key={skillIndex} 
-                                                    className="px-3 py-1 text-sm bg-[#282828] text-white rounded-full animate-fadeIn hover:scale-110"
+                                                    className="px-3 py-1 text-sm bg-card text-white rounded-full animate-fadeIn hover:scale-110"
                                                     style={{ animationDelay: `${skillIndex * 100}ms` }}
                                                 >
                                                     {skill}
@@ -220,7 +220,7 @@ const Resume = () => {
                             <p className="mb-4">{skills.description}</p>
                             <div className="grid grid-cols-3 gap-4 md:grid-cols-4">
                                 {skills.info.map((skill, index) => (
-                                    <div key={index} className="flex flex-col items-center justify-center p-4 bg-[#282828] aspect-square rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-110 hover:bg-[#181818]">
+                                    <div key={index} className="flex flex-col items-center justify-center p-4 bg-card aspect-square rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-110 hover:bg-[#181818]">
                                         <div className="mb-2 text-4xl md:text-7xl">{skill.icon}</div>
                                         <span className="text-sm text-center">{skill.name}</span>
                                     </div>
@@ -235,7 +235,7 @@ const Resume = () => {
                                 <p className="mb-4">{experience.description}</p>
                                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                                     {experience.info.map((item, index) => (
-                                        <div key={index} className="p-4 bg-[#282828] rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105">
+                                        <div key={index} className="p-4 bg-card rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105">
                                             <h3 className="md:text-2xl text-accent">{item.company}</h3>
                                             <p className="text-lg">{item.position}</p>
                                             <p className="text-gray-400">{item.duration}</p>

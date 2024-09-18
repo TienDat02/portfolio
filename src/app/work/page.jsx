@@ -91,7 +91,7 @@ export default function Work() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="bg-[#282828] p-6 rounded-lg shadow-md"
+              className="bg-card p-6 rounded-lg shadow-md"
             >
               <h3 className="mb-3 text-3xl font-semibold text-accent">{projects[activeIndex].title}</h3>
               <p className="mb-3 text-sm text-white">{projects[activeIndex].duration}</p>

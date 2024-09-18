@@ -48,6 +48,7 @@ const Avatar = () => {
                 duration: 8,
                 ease: "easeInOut",
               },
+              delay: index * 2,
             }}
           />
         ))}
@@ -68,6 +69,7 @@ const Avatar = () => {
             duration: 4,
             repeat: Infinity,
             ease: "easeInOut",
+            delay: 2,
           }}
         />
       </div>

@@ -1,44 +1,45 @@
 'use client'
 
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
+import { useState, useEffect } from 'react'
 
-const pageVariants = {
-  initial: {
-    opacity: 0,
-    x: -200,
-  },
-  in: {
-    opacity: 1,
-    x: 0,
-  },
-  out: {
-    opacity: 0,
-    x: 200,
-  },
+const loadingVariants = {
+  animate: {
+    scale: [1, 2, 2, 1, 1],
+    rotate: [0, 0, 180, 180, 0],
+    borderRadius: ["0%", "0%", "50%", "50%", "0%"]
+  }
 }
 
-const pageTransition = {
-  type: 'tween',
-  ease: 'easeIn',
-  duration: 0.4,
+const loadingTransition = {
+  duration: 1,
+  ease: "easeInOut",
+  times: [0, 0.2, 0.5, 0.8, 1],
+  repeat: Infinity,
+  repeatDelay: 1
 }
 
 export default function PageTransition({ children }) {
   const pathname = usePathname()
+  const [isLoading, setIsLoading] = useState(true)
 
-  return (
-    <AnimatePresence mode="wait">
+  useEffect(() => {
+    setIsLoading(true)
+    const timer = setTimeout(() => setIsLoading(false), 1000) // Show loader for 2 seconds
+    return () => clearTimeout(timer)
+  }, [pathname])
+
+  if (isLoading) {
+    return (
       <motion.div
-        key={pathname}
-        initial="initial"
-        animate="in"
-        exit="out"
-        variants={pageVariants}
-        transition={pageTransition}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
-  )
+        className="loader"
+        variants={loadingVariants}
+        animate="animate"
+        transition={loadingTransition}
+      />
+    )
+  }
+
+  return children
 }

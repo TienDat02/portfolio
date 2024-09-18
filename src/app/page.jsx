@@ -16,7 +16,7 @@ const Home = () => {
           <p className="max-lg:max-w-[450px] lg:max-w-[600px] md:text-lg my-4"> a recent IT graduate with a passion for developing modern, elegant solutions that drive efficiency and innovation. With a strong foundation in software development and system analysis, I am eager to apply my skills to create impactful and scalable technologies.</p>
           <div className="flex flex-col items-center space-y-4 md:flex-row md:items-start md:space-y-0 md:space-x-4">
             <GradientButton href="/resume">View Resume</GradientButton>
-            <div className="flex space-x-4 gap-4">
+            <div className="flex gap-4 space-x-4">
               <Link href="https://github.com/TienDat02" target="_blank" rel="noopener noreferrer">
                 <FaGithub className="text-3xl transition-colors hover:text-accent" />
               </Link>
