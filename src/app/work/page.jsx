@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination } from "swiper/modules";
 import { ChevronLeft, ChevronRight, Github } from "lucide-react";
+import GradientText from "@/components/ui/GradientText";
 
 const projects = [
   {
@@ -78,7 +79,9 @@ export default function Work() {
 
   return (
     <div className="container px-4 py-16 mx-auto bg-primary rounded-xl shadow-lg">
-      <h2 className="mb-12 text-5xl font-bold text-center text-accent">My Work</h2>
+              <div className="text-center">
+          <GradientText text="My Works" />
+        </div>
       <div className="flex flex-col md:flex-row gap-8">
         <div className="md:w-1/2">
           <AnimatePresence mode="wait">

@@ -36,13 +36,13 @@ const Avatar = () => {
               borderDasharray: `${3 + index} ${3 + index}`,
             }}
             animate={{
-              rotate: 360,
+              rotate: 180,
               scale: [1, 1.05, 1],
             }}
             transition={{
               duration: 16 + index * 4,
               repeat: Infinity,
-              ease: "linear",
+              ease: "backInOut",
               scale: {
                 repeat: Infinity,
                 duration: 8,

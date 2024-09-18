@@ -23,6 +23,7 @@ import {
 } from "react-icons/si";
 import Link from 'next/link';
 
+import GradientText from '@/components/ui/GradientText';
 
 const about = {
     title: "About Me",
@@ -156,7 +157,13 @@ const Resume = () => {
                         <p className="mb-4">{about.description}</p>
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                             {about.info.map((item, index) => (
-                                <div key={index} className="bg-[#282828] p-4 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105">
+                                <motion.div
+                                    key={index}
+                                    className="bg-[#282828] p-4 rounded-lg shadow-md"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                                >
                                     <div className="flex items-center mb-2">
                                         <div className="flex justify-center items-center mr-2 w-6 h-6 text-xl text-accent">
                                             {item.icon}
@@ -164,7 +171,7 @@ const Resume = () => {
                                         <strong className="text-accent">{item.title}</strong>
                                     </div>
                                     <p className="ml-8 text-lg">{item.value}</p>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
                     </div>
@@ -226,7 +233,7 @@ const Resume = () => {
                             <div>
                                 <h2 className="mb-4 text-accent">{experience.title}</h2>
                                 <p className="mb-4">{experience.description}</p>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                                     {experience.info.map((item, index) => (
                                         <div key={index} className="p-4 bg-[#282828] rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105">
                                             <h3 className="md:text-2xl text-accent">{item.company}</h3>
@@ -252,9 +259,9 @@ const Resume = () => {
         <div className="flex flex-col mx-auto max-w-7xl lg:flex-row">
             {/* Tabs */}
             <div className="p-6 w-full lg:w-1/3 lg:sticky lg:top-0 lg:h-screen">
-                <h1 className='mb-4 text-accent'>Why Consider Me?</h1>
+                <GradientText text= "Why Consider Me?"/>
                 <p className="mb-6 md:text-lg text-[#a1a1a1]">As a recent graduate, I am eager to learn and grow. I am committed to continuously improving my skills to contribute value to you company.</p>
-                <ul className="flex flex-wrap gap-1 lg:flex-col md:text-base text-sm">
+                <ul className="flex flex-wrap gap-1 text-sm lg:flex-col md:text-base">
                     {['about', 'education', 'skills', 'experience'].map((tab) => (
                         <motion.li
                             key={tab}

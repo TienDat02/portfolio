@@ -5,10 +5,11 @@
 
 @layer base {
   body{
-    @apply font-primary bg-primary text-white leading-loose;
+    @apply leading-loose text-white font-primary bg-primary;
   }
   h1 {
-    @apply text-[38px] md:text-[70px] leading-[1.1] font-bold;
+    @apply text-[38px] md:text-[70px] leading-[1.1] font-bold mb-4;
+    color: transparent;
   }
   h2 {
     @apply text-[26px] md:text-[48px] leading-[1.1] font-bold;
@@ -19,4 +20,10 @@
   p {
     @apply text-[16px] md:text-[18px] leading-[1.5];
   }
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
