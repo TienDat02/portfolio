@@ -33,7 +33,7 @@ export default function PageTransition({ children }) {
   if (isLoading) {
     return (
       <motion.div
-        className="loader"
+        className="loader md:w-[100px] md:h-[100px] w-[50px] h-[50px] items-center justify-center flex"
         variants={loadingVariants}
         animate="animate"
         transition={loadingTransition}
