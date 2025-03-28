@@ -125,8 +125,13 @@ const experience = {
         {
             company: "HDBank",
             position: "Back-end Developer Intern",
-            duration: "August 2024 - Now"
+            duration: "August 2024 - November 2024"
         },
+        {
+            company: "Viettel Contruction",
+            position: "Business Support",
+            duration: "March 2024 - Now"
+        }
 
     ]
 }

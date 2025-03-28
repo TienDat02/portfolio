@@ -25,7 +25,6 @@ const Stats = ({ stats }) => {
                 <StatItem value={3} label="Months of Experience" />
                 <StatItem value={5} label="Academic Projects Done" />
                 <StatItem value={8} label="Graduate Score" />
-                <StatItem value={22} label="Years single :<" />
               </div>
             </div>
           </div>

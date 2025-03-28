@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       className={robotoSlab.variable}
       >
         <Header />
-        <PageTransition>{children}</PageTransition>
+        {children}
       </body>
     </html>
   );
