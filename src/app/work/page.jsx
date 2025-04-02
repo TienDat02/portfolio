@@ -78,11 +78,11 @@ export default function Work() {
   };
 
   return (
-    <div className="container px-4 py-16 mx-auto bg-primary rounded-xl shadow-lg">
+    <div className="container px-4 mx-auto rounded-xl shadow-lg py-18 bg-primary">
               <div className="text-center">
           <GradientText text="My Works" />
         </div>
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col gap-8 md:flex-row">
         <div className="md:w-1/2">
           <AnimatePresence mode="wait">
             <motion.div
@@ -91,15 +91,15 @@ export default function Work() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="bg-card p-6 rounded-lg shadow-md"
+              className="p-6 rounded-lg shadow-md bg-card"
             >
               <h3 className="mb-3 text-3xl font-semibold text-accent">{projects[activeIndex].title}</h3>
               <p className="mb-3 text-sm text-white">{projects[activeIndex].duration}</p>
-              <p className="mb-4 text-white leading-relaxed">{projects[activeIndex].description}</p>
+              <p className="mb-4 leading-relaxed text-white">{projects[activeIndex].description}</p>
               {projects[activeIndex].work && (
                 <div className="mb-4">
                   <h4 className="mb-2 font-semibold text-white">My Role:</h4>
-                  <ul className="list-disc list-inside space-y-1">
+                  <ul className="space-y-1 list-disc list-inside">
                     {projects[activeIndex].work.map((role, index) => (
                       <li key={index} className="text-white">{role}</li>
                     ))}
@@ -120,7 +120,7 @@ export default function Work() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-4 py-2 text-[#080808] bg-[#1dc7e6] rounded-md transition-colors hover:bg-[#00ffff] hover:scale-110"
                 >
-                  <Github className="w-5 h-5 mr-2" />
+                  <Github className="mr-2 w-5 h-5" />
                   View on GitHub
                 </a>
               )}
@@ -128,7 +128,7 @@ export default function Work() {
           </AnimatePresence>
         </div>
         <div className="md:w-1/2">
-          <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
+          <div className="overflow-hidden relative h-96 rounded-lg shadow-xl">
             <Swiper
               ref={swiperRef}
               spaceBetween={30}
@@ -149,13 +149,13 @@ export default function Work() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="object-cover w-full h-full"
+                    className="object-contain w-full h-full bg-black"
                   />
                 </SwiperSlide>
               ))}
             </Swiper>
           </div>
-          <div className="flex justify-center mt-4 gap-4">
+          <div className="flex gap-4 justify-center mt-4">
             <button
               onClick={handlePrev}
               className="p-2 bg-white rounded-full shadow-md transition-all hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"

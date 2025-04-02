@@ -23,7 +23,9 @@ export default function RootLayout({ children }) {
       className={robotoSlab.variable}
       >
         <Header />
-        {children}
+        
+          {children}
+    
       </body>
     </html>
   );

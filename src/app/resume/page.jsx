@@ -37,7 +37,8 @@ const about = {
         {
             title: "Email",
             value: "tien03dat@gmail.com",
-            icon: <FaEnvelope />
+            icon: <FaEnvelope />,
+            link: "mailto:tien03dat@gmail.com"
         },
         {
             title: "Phone",
@@ -137,13 +138,13 @@ const experience = {
 }
 const education = {
     title: "My Education",
-    description: "I recently graduated from the University of Information Technology in November 2024.",
+    description: "I graduated from the University of Information Technology in November 2024.",
     info: [
         {
             school: "University of Information Technology",
             specialization: "Information Technology",
             duration: "2020 - 2024",
-            softSkills: "Teamwork, Communication, Problem-solving, Time management, Project management, Business Analyst"
+            degree: "Banchelor's Degree"
         }, 
     ]
 }
@@ -160,11 +161,18 @@ const Resume = () => {
                     <div>
                         <h2 className="mb-4 text-accent">{about.title}</h2>
                         <p className="mb-4">{about.description}</p>
+                        <p className="mb-4">Download CV: <a 
+                            href="/TienDat_CV.pdf" 
+                            download="TienDat_CV.pdf"
+                            className="text-transparent bg-clip-text bg-gradient-to-r transition-opacity duration-300 from-accent to-accentlight hover:opacity-80"
+                        >
+                            Click here
+                        </a></p>
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                             {about.info.map((item, index) => (
                                 <motion.div
                                     key={index}
-                                    className="bg-card p-4 rounded-lg shadow-md"
+                                    className="p-4 rounded-lg shadow-md bg-card"
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -175,7 +183,18 @@ const Resume = () => {
                                         </div>
                                         <strong className="text-accent">{item.title}</strong>
                                     </div>
-                                    <p className="ml-8 text-lg">{item.value}</p>
+                                    {item.link ? (
+                                        <a 
+                                            href={item.link}
+                                            className="ml-8 text-lg text-transparent bg-clip-text bg-gradient-to-r transition-opacity duration-300 from-accent to-accentlight hover:opacity-80"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            {item.value}
+                                        </a>
+                                    ) : (
+                                        <p className="ml-8 text-lg">{item.value}</p>
+                                    )}
                                 </motion.div>
                             ))}
                         </div>
@@ -189,30 +208,24 @@ const Resume = () => {
                             {education.info.map((item, index) => (
                                 <div key={index} className="flex flex-col mb-8">
                                     <div className="flex items-start mb-2">
-                                        <img 
-                                            src="/Logo_UIT.png" 
-                                            alt={`${item.school} logo`} 
-                                            className="object-contain mr-4 w-16 h-16 md:w-24 md:h-24"
-                                        />
-                                        <div>
-                                            <h3 className="font-semibold">{item.school}</h3>
-                                            <p>{item.specialization}</p>
-                                            <p className="text-gray-600">{item.duration}</p>
-                                        </div>
-                                    </div>
-                                    <div className="mt-2">
-                                        <strong>Soft skills:</strong>
-                                        <div className="flex flex-wrap gap-2 mt-2">
-                                            {item.softSkills.split(', ').map((skill, skillIndex) => (
-                                                <span 
-                                                    key={skillIndex} 
-                                                    className="px-3 py-1 text-sm bg-card text-white rounded-full animate-fadeIn hover:scale-110"
-                                                    style={{ animationDelay: `${skillIndex * 100}ms` }}
-                                                >
-                                                    {skill}
-                                                </span>
-                                            ))}
-                                        </div>
+                                        <Link 
+                                            href="https://www.uit.edu.vn/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-start group"
+                                        >
+                                            <img 
+                                                src="/Logo_UIT.png" 
+                                                alt={`${item.school} logo`} 
+                                                className="object-contain mr-4 w-16 h-16 transition-transform duration-300 md:w-28 md:h-28 group-hover:scale-105"
+                                            />
+                                            <div>
+                                                <h3 className="font-semibold transition-colors duration-300 text-accent group-hover:text-accent-light">{item.school}</h3>
+                                                <p>{item.specialization}</p>
+                                                <p className="text-gray-600">{item.duration}</p>
+                                                <p className="text-white">{item.degree}</p>
+                                            </div>
+                                        </Link>
                                     </div>
                                 </div>
                             ))}
@@ -240,7 +253,7 @@ const Resume = () => {
                                 <p className="mb-4">{experience.description}</p>
                                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                                     {experience.info.map((item, index) => (
-                                        <div key={index} className="p-4 bg-card rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105">
+                                        <div key={index} className="p-4 rounded-lg shadow-md transition-all duration-300 bg-card hover:shadow-lg hover:scale-105">
                                             <h3 className="md:text-2xl text-accent">{item.company}</h3>
                                             <p className="text-lg">{item.position}</p>
                                             <p className="text-gray-400">{item.duration}</p>

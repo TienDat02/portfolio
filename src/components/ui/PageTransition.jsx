@@ -4,44 +4,16 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 
-const loadingVariants = {
-  initial: { scale: 0.8, opacity: 0 },
-  animate: {
-    scale: [1, 1.2, 1],
-    opacity: [1, 0.8, 1],
-    rotate: [0, 180, 360],
-    borderRadius: ["0%", "50%", "0%"]
-  },
-  exit: { scale: 0.8, opacity: 0 }
-}
-
-const loadingTransition = {
-  duration: 1.5,
-  ease: "easeInOut",
-  times: [0, 0.5, 1],
-  repeat: Infinity,
-  repeatDelay: 0.5
-}
-
-const pageVariants = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -20 }
-}
-
-const pageTransition = {
-  type: 'tween',
-  ease: 'anticipate',
-  duration: 0.5
-}
-
-export default function PageTransition({ children }) {
+const PageTransition = ({ children }) => {
   const pathname = usePathname()
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     setIsLoading(true)
-    const timer = setTimeout(() => setIsLoading(false), 1500) // Show loader for 1.5 seconds
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 800) // Slightly longer for smoother transition
+
     return () => clearTimeout(timer)
   }, [pathname])
 
@@ -49,30 +21,50 @@ export default function PageTransition({ children }) {
     <AnimatePresence mode="wait">
       {isLoading ? (
         <motion.div
-          key="loader"
-          className="fixed inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm z-50"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
+          key="loading"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ 
+            duration: 0.4,
+            ease: [0.4, 0, 0.2, 1]
+          }}
+          className="flex fixed inset-0 z-50 justify-center items-center backdrop-blur-sm bg-background/95"
         >
-          <motion.div
-            className="w-16 h-16 border-4 border-accent border-t-transparent rounded-full"
-            variants={loadingVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            transition={loadingTransition}
-          />
+          <motion.div 
+            className="relative"
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            transition={{ 
+              duration: 0.3,
+              ease: "easeOut"
+            }}
+          >
+            <div className="w-12 h-12 rounded-full border-4 animate-spin border-primary/30 border-t-primary" />
+            <motion.div 
+              className="absolute inset-0 rounded-full border-4 border-primary/20"
+              animate={{ 
+                scale: [1, 1.2, 1],
+                opacity: [0.5, 0.8, 0.5]
+              }}
+              transition={{ 
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          </motion.div>
         </motion.div>
       ) : (
         <motion.div
-          key={pathname}
-          variants={pageVariants}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          transition={pageTransition}
+          key="content"
+          initial={{ opacity: 0, y: 20, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -20, scale: 0.98 }}
+          transition={{ 
+            duration: 0.5,
+            ease: [0.4, 0, 0.2, 1]
+          }}
         >
           {children}
         </motion.div>
@@ -80,3 +72,5 @@ export default function PageTransition({ children }) {
     </AnimatePresence>
   )
 }
+
+export default PageTransition

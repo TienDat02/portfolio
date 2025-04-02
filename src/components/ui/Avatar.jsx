@@ -26,18 +26,18 @@ const Avatar = () => {
         {[0, 1, 2].map((index) => (
           <motion.div
             key={index}
-            className="absolute rounded-full border-2 opacity-40 border-accent"
+            className={`absolute rounded-full border-2 ${index === 1 ? 'opacity-100' : 'opacity-50'}`}
             style={{
               inset: `${-18 - index * 10}px`,
               borderRadius: '55%',
-              borderStyle: 'dashed',
-              borderWidth: '3px',
-              borderColor: 'var(--accent)',
+              borderStyle: index === 1 ? 'dashed double' : 'solid',
+              borderWidth: index === 1 ? '6px' : '3px',
+              borderColor: '#04D9FF',
               borderDasharray: `${3 + index} ${3 + index}`,
             }}
             animate={{
               rotate: index % 2 === 0 ? 180 : -180,
-              scale: [1, 1.1, 1],
+              scale: [1, 1.05, 1],
             }}
             transition={{
               duration: 16 + index * 4,
@@ -54,19 +54,19 @@ const Avatar = () => {
         ))}
         
         <motion.div
-          className="absolute rounded-full border-2 opacity-50 border-accent"
+          className="absolute rounded-full border-2 opacity-100"
           style={{
             inset: '-5px',
             borderRadius: '55%',
-            borderStyle: 'solid',
-            borderWidth: '2px',
-            borderColor: 'var(--accent)',
+            borderStyle: 'dashed',
+            borderWidth: '4px',
+            borderColor: '#04D9FF',
           }}
           animate={{
-            scale: [1, 1.05, 1],
+            rotate: 180
           }}
           transition={{
-            duration: 4,
+            duration: 18,
             repeat: Infinity,
             ease: "easeInOut",
             delay: 2,
