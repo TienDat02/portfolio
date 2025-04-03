@@ -16,9 +16,8 @@ const Avatar = () => {
             <Image
               src="/Avatar/avatar.png"
               alt="avatar"
-              className="rounded-full"
-              layout="fill"
-              objectFit="cover"
+              className="object-cover rounded-full"
+              fill
             />
           </div>
         </motion.div>
