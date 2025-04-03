@@ -1,9 +1,35 @@
+"use client";
 import Avatar from "@/components/ui/Avatar";
 import Stats from "@/components/ui/Stat";
 import GradientButton from "@/components/ui/GradientButton";
 // Add these imports
 import { FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+const AnimatedText = ({ text, className }) => {
+  return (
+    <motion.span
+      className={className}
+      initial={{ backgroundPosition: "0% 50%" }}
+      animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+      transition={{
+        duration: 3,
+        repeat: Infinity,
+        ease: "linear"
+      }}
+      style={{
+        background: "linear-gradient(270deg, #04ffa8, #04d9ff, #045cff)",
+        backgroundSize: "200% 200%",
+        WebkitBackgroundClip: "text",
+        backgroundClip: "text",
+        color: "transparent"
+      }}
+    >
+      {text}
+    </motion.span>
+  );
+};
 
 const Home = () => {
   return(
@@ -12,7 +38,7 @@ const Home = () => {
         <div className="flex flex-col justify-between items-center text-center md:flex-row md:text-left">
         <div className="order-2 md:order-none">
           <h2>Xin chào!</h2>
-          <h2>I&apos;m <span className="text-5xl text-accent md:text-7xl">Đạt</span>,</h2>
+          <h2>I&apos;m <AnimatedText text="Đạt" className="text-5xl md:text-7xl" />,</h2>
           <p className="max-lg:max-w-[450px] lg:max-w-[600px] md:text-lg my-4"> a recent IT graduate with a passion for developing modern, elegant solutions that drive efficiency and innovation. With a strong foundation in software development and system analysis, I am eager to apply my skills to create impactful and scalable technologies.</p>
           <div className="flex flex-col items-center space-y-4 md:flex-row md:items-start md:space-y-0 md:space-x-4">
             <GradientButton href="/resume">View Resume</GradientButton>

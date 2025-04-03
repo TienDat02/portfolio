@@ -24,8 +24,9 @@ module.exports = {
       colors: {
         primary: "#010203",
         accent:  "#04D9FF",
-        accentlight: "#04f7ff",
-        card: "#282828"
+        accentlight: "#FEF8FF",
+        accentdark: "#015363",
+        card: "#282828",
       }
 
   	}

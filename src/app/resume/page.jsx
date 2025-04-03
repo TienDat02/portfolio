@@ -156,13 +156,20 @@ const Resume = () => {
                     <div>
                         <h2 className="mb-4 text-accent">{about.title}</h2>
                         <p className="mb-4">{about.description}</p>
-                        <p className="mb-4">Download CV: <a 
-                            href="/TienDat_CV.pdf" 
-                            download="TienDat_CV.pdf"
-                            className="text-transparent bg-clip-text bg-gradient-to-r transition-opacity duration-300 from-accent to-accentlight hover:opacity-80"
-                        >
-                            Click here
-                        </a></p>
+                        <div className="mb-4">
+                            <span>Download CV: </span>
+                            <a 
+                                href="/TienDat_CV.pdf" 
+                                download="TienDat_CV.pdf"
+                                className="inline-block cursor-pointer"
+                            >
+                                <GradientText 
+                                    text="Click here" 
+                                    as="span"
+                                    textSize="base"
+                                />
+                            </a>
+                        </div>
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                             {about.info.map((item, index) => (
                                 <motion.div
@@ -181,7 +188,7 @@ const Resume = () => {
                                     {item.link ? (
                                         <a 
                                             href={item.link}
-                                            className="ml-8 text-lg text-transparent bg-clip-text bg-gradient-to-r transition-opacity duration-300 from-accent to-accentlight hover:opacity-80"
+                                            className="ml-8 text-lg text-white transition-colors duration-300 hover:text-accent"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
@@ -256,9 +263,15 @@ const Resume = () => {
                                     ))}
                                 </div>
                                 <Link href="/work" className="inline-block mt-6">
-                                    <div className='flex items-center transition-colors duration-300 group text-accent hover:text-accent-light'>
-                                        <span className="mr-2 text-lg font-semibold">See more work</span>
-                                        <FaArrowRight className="transition-transform duration-300 transform group-hover:translate-x-1" />
+                                    <div className='flex items-center transition-colors duration-300 group'>
+                                        <GradientText 
+                                            text="See more work" 
+                                            as="span"
+                                            textSize="lg"
+                                            fontWeight="semibold"
+                                            className="mr-2"
+                                        />
+                                        <FaArrowRight className="transition-transform duration-300 transform group-hover:translate-x-1 text-accent" />
                                     </div>
                                 </Link>
                             </div>
